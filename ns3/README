@@ -1,0 +1,31 @@
+文件说明
+
+.
+├── NS-3-report.docx
+├── pcap
+│   ├── inter-cluster-10-1.pcap
+│   ├── inter-cluster-1-1.pcap
+│   ├── inter-cluster-4-1.pcap
+│   ├── inter-cluster-7-1.pcap
+│   ├── inter-cluster-merged.pcap
+│   ├── many-to-one-1-1.pcap
+│   ├── two-core-inter-cluster-10-1.pcap
+│   ├── two-core-inter-cluster-1-1.pcap
+│   ├── two-core-inter-cluster-4-1.pcap
+│   ├── two-core-inter-cluster-7-1.pcap
+│   ├── two-core-inter-cluster-merged.pcap
+│   └── two-core-many-to-one-1-1.pcap
+├── README
+├── src
+│   ├── inter-cluster.cc
+│   ├── many-to-one.cc
+│   ├── two-core-inter-cluster.cc
+│   └── two-core-many-to-one.cc
+
+
+pcap 目录下是抓包文件
+src 目录下是源代码文件
+NS-3-report.docx 是实验报告
+
+inter-cluster 和 many-to-one 是两种拓扑结构
+two-core-* 是增加 core switch 和采用 ECMP Routing 后的数据中心拓扑结构
