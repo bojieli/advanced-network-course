@@ -1,0 +1,84 @@
+环境准备：
+
+sudo apt-get install python mininet
+
+运行方法：
+
+sudo ./ThreeLayerDC.py
+
+参考输出：
+
+*** Creating network
+*** Adding controller
+*** Adding hosts:
+h1 h2 h3 h4 h5 h6 h7 h8
+*** Adding switches:
+a1 a2 c1 e1 e2 e3 e4
+*** Adding links:
+(a1, c1) (a1, e1) (a1, e2) (a2, c1) (a2, e3) (a2, e4) (e1, h1) (e1, h2) (e2, h3) (e2, h4) (e3, h5) (e3, h6) (e4, h7) (e4, h8)
+*** Configuring hosts
+h1 h2 h3 h4 h5 h6 h7 h8
+*** Starting controller
+*** Starting 7 switches
+a1 a2 c1 e1 e2 e3 e4
+Node connections dump:
+h1 h1-eth0:e1-eth1
+h2 h2-eth0:e1-eth2
+h3 h3-eth0:e2-eth1
+h4 h4-eth0:e2-eth2
+h5 h5-eth0:e3-eth1
+h6 h6-eth0:e3-eth2
+h7 h7-eth0:e4-eth1
+h8 h8-eth0:e4-eth2
+Connectivity (ping) test:
+*** Ping: testing ping reachability
+h1 -> h2 h3 h4 h5 h6 h7 h8
+h2 -> h1 h3 h4 h5 h6 h7 h8
+h3 -> h1 h2 h4 h5 h6 h7 h8
+h4 -> h1 h2 h3 h5 h6 h7 h8
+h5 -> h1 h2 h3 h4 h6 h7 h8
+h6 -> h1 h2 h3 h4 h5 h7 h8
+h7 -> h1 h2 h3 h4 h5 h6 h8
+h8 -> h1 h2 h3 h4 h5 h6 h7
+*** Results: 0% dropped (56/56 received)
+##### Throughput in same rack:
+*** Iperf: testing TCP bandwidth between h1 and h2
+*** Results: ['20.8 Gbits/sec', '20.8 Gbits/sec']
+*** Iperf: testing TCP bandwidth between h3 and h4
+waiting for iperf to start up...*** Results: ['19.8 Gbits/sec', '19.8 Gbits/sec']
+*** Iperf: testing TCP bandwidth between h5 and h6
+*** Results: ['20.5 Gbits/sec', '20.5 Gbits/sec']
+*** Iperf: testing TCP bandwidth between h7 and h8
+*** Results: ['21.0 Gbits/sec', '21.0 Gbits/sec']
+##### Average throughput: 20.525 Gbps
+
+##### Throughput in different racks but in same aggregation switch:
+*** Iperf: testing TCP bandwidth between h1 and h3
+*** Results: ['14.8 Gbits/sec', '14.9 Gbits/sec']
+*** Iperf: testing TCP bandwidth between h2 and h4
+*** Results: ['16.8 Gbits/sec', '16.8 Gbits/sec']
+*** Iperf: testing TCP bandwidth between h5 and h7
+*** Results: ['10.3 Gbits/sec', '10.3 Gbits/sec']
+*** Iperf: testing TCP bandwidth between h6 and h8
+*** Results: ['15.6 Gbits/sec', '15.6 Gbits/sec']
+##### Average throughput: 14.375 Gbps
+
+##### Throughput in different racks and different aggregation switches:
+*** Iperf: testing TCP bandwidth between h1 and h5
+*** Results: ['14.3 Gbits/sec', '14.3 Gbits/sec']
+*** Iperf: testing TCP bandwidth between h2 and h6
+*** Results: ['8.16 Gbits/sec', '8.17 Gbits/sec']
+*** Iperf: testing TCP bandwidth between h3 and h7
+*** Results: ['13.0 Gbits/sec', '13.0 Gbits/sec']
+*** Iperf: testing TCP bandwidth between h4 and h8
+*** Results: ['13.9 Gbits/sec', '13.9 Gbits/sec']
+##### Average throughput: 12.34 Gbps
+
+*** Stopping 7 switches
+a1 ...a2 ...c1 ..e1 ...e2 ...e3 ...e4 ...
+*** Stopping 8 hosts
+h1 h2 h3 h4 h5 h6 h7 h8
+*** Stopping 1 controllers
+c0
+*** Done
+
