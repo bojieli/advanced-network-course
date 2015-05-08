@@ -107,7 +107,7 @@ int main (int argc, char *argv[])
         // buffer size (network layer will fragment it if necessary)
         client.SetAttribute ("PacketSize", UintegerValue(4096));
 
-        clientApp[i] = client.Install (nodes[i].Get(0));
+        clientApp[i] = client.Install (nodes[i].Get(2));
         clientApp[i].Start(Seconds (0));
         clientApp[i].Stop (Seconds (interval));
 
